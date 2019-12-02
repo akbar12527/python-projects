@@ -19,14 +19,24 @@ class frame:
         # self.store_text = self.text_input.get('1.0', 'end-1c')
 
     def buttons(self):
+        # add button
         self.add_button = tk.Button(
             self.entry_frame, text='ADD', command=self.todo_list, padx=10, pady=10)
         self.add_button.place(relx=0.86, rely=0.15)
+        # clear button
+        self.clearlist_button = tk.Button(
+            self.entry_frame, text='Clear list', command=lambda: self.clearlist(self.display_frame))
+        self.clearlist_button.place(relx=0.75, rely=0.15)
 
     def todo_list(self):
         self.checkbox = tk.Checkbutton(
             self.display_frame, text=self.text_input.get('1.0', 'end-1c'), bg='#db9833', pady=3)
         self.checkbox.pack(anchor=tk.W)
+
+    def clearlist(self, x):
+        children = x.winfo_children()
+        for child in children:
+            child.destroy()
 
 
 frm = frame(root)
