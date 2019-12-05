@@ -1,5 +1,6 @@
 import tkinter as tk
 
+
 root = tk.Tk()
 root.geometry('1000x600')
 
@@ -25,8 +26,8 @@ class frame:
         self.add_button.place(relx=0.86, rely=0.15)
         # clear button
         self.clearlist_button = tk.Button(
-            self.entry_frame, text='Clear list', command=lambda: self.clearlist(self.display_frame))
-        self.clearlist_button.place(relx=0.75, rely=0.15)
+            self.entry_frame, text='Clear list', command=lambda: self.clearlist(self.display_frame), padx=10, pady=10)
+        self.clearlist_button.place(relx=0.69, rely=0.15)
 
     def todo_list(self):
         self.checkbox = tk.Checkbutton(
